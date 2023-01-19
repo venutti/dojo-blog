@@ -13,9 +13,13 @@ export default function Home() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    setBlogs(blogs.filter((blog) => blog.id !== id));
+  };
+
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All blogs" />
+      <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete} />
     </div>
   );
 }
